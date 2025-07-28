@@ -5,5 +5,5 @@ plotly
 seaborn
 scikit-learn
 gdown
-
+nltk
 
