@@ -24,16 +24,38 @@ The goal is to uncover hidden patterns and deliver insights that can drive smart
 
 
 # --- Data Loading and Caching ---
+import streamlit as st
+import pandas as pd
+import os
+
+# Install gdown only if needed
+try:
+    import gdown
+except ImportError:
+    os.system('pip install gdown')
+    import gdown
+
+# File IDs from Google Drive
+SENTIMENT_FILE_ID = "12h2eEKqo9WtpZ249HaUQNcSzIGZTAnms"
+TRADER_FILE_ID = "1dR_Zuf7JNyhLFmQ2KLKmoAQ4NuVUb65N"
+
 @st.cache_data
 def load_data():
     try:
-        df_sentiment = pd.read_csv('fear_greed_index.csv')
-        df_trader = pd.read_csv('historical_data.csv')
+        if not os.path.exists("fear_greed_index.csv"):
+            gdown.download(f"https://drive.google.com/uc?id={SENTIMENT_FILE_ID}", "fear_greed_index.csv", quiet=False)
+        if not os.path.exists("historical_data.csv"):
+            gdown.download(f"https://drive.google.com/uc?id={TRADER_FILE_ID}", "historical_data.csv", quiet=False)
+
+        df_sentiment = pd.read_csv("fear_greed_index.csv")
+        df_trader = pd.read_csv("historical_data.csv")
         return df_sentiment, df_trader
-    except FileNotFoundError:
-        st.error("Error: 'fear_greed_index.csv' or 'historical_data.csv' not found. Please make sure they are in the same directory as the app.")
+
+    except Exception as e:
+        st.error(f"❌ Data loading failed: {e}")
         return None, None
 
+# Load data and proceed if successful
 df_sentiment, df_trader = load_data()
 
 if df_sentiment is not None and df_trader is not None:
