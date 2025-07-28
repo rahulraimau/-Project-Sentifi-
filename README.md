@@ -1,6 +1,8 @@
 Trader Sentiment Analysis and Predictive Modeling
 This project analyzes the relationship between trader behavior on the Hyperliquid platform and the broader Bitcoin market sentiment. It uses data science techniques to uncover patterns, develop predictive models, and provide data-driven insights for trading strategies.
 
+dataset:https://drive.google.com/file/d/12h2eEKqo9WtpZ249HaUQNcSzIGZTAnms/view?usp=drive_link,https://drive.google.com/file/d/1dR_Zuf7JNyhLFmQ2KLKmoAQ4NuVUb65N/view?usp=drive_link
+
 Key Features
 NLP-Enhanced Sentiment Analysis: Utilizes the VADER sentiment analyzer to create a nuanced sentiment score, offering a more granular view than traditional classifications.
 Predictive PnL Model: A RandomForestRegressor that predicts daily Profit and Loss (PnL) with an R-squared of 33.5%.
