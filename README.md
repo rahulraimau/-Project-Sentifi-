@@ -5,6 +5,9 @@ dataset:https://drive.google.com/file/d/12h2eEKqo9WtpZ249HaUQNcSzIGZTAnms/view?u
 live demo:http://localhost:8501/
 https://project-sentifi-git-main-rahul-rais-projects-78eaf2ef.vercel.app/
 https://tdtzcwpqhyfsmaypwq7ake.streamlit.app/
+https://project-sentifi.onrender.com/
+
+
 Key Features
 NLP-Enhanced Sentiment Analysis: Utilizes the VADER sentiment analyzer to create a nuanced sentiment score, offering a more granular view than traditional classifications.
 Predictive PnL Model: A RandomForestRegressor that predicts daily Profit and Loss (PnL) with an R-squared of 33.5%.
