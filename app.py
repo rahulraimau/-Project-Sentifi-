@@ -7,6 +7,7 @@ import seaborn as sns
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
+import gdown
 
 # --- Page Configuration ---
 st.set_page_config(
