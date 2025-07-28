@@ -12,3 +12,4 @@ scikit-learn==1.6.1
 seaborn==0.13.2
 sklearn-pandas==2.2.0
 streamlit==1.47.1
+matplotlib
