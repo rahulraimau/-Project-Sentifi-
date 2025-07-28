@@ -1,0 +1,32 @@
+project:
+  name: Trader Performance & Sentiment Analysis
+  author: Rahul Rai
+  duration: July 1, 2025 - July 31, 2025
+  tools:
+    - Python
+    - Pandas
+    - Matplotlib
+    - Seaborn
+    - Scikit-learn
+    - Streamlit
+    - GDown
+  data_sources:
+    - name: Bitcoin Fear & Greed Index
+      link: https://drive.google.com/file/d/12h2eEKqo9WtpZ249HaUQNcSzIGZTAnms/view?usp=drive_link
+    - name: Hyperliquid Historical Trader Data
+      link: https://drive.google.com/file/d/1dR_Zuf7JNyhLFmQ2KLKmoAQ4NuVUb65N/view?usp=drive_link
+  tasks:
+    - Load sentiment and trader data
+    - Preprocess timestamps and merge datasets
+    - Clean and transform closed PnL
+    - Perform EDA: PnL vs sentiment
+    - Cluster traders using DBSCAN
+    - Forecast market sentiment using Prophet
+    - Build Streamlit dashboard
+  output:
+    - eda_plots: closed_pnl_by_sentiment.png
+    - clustering: dbscan_clustered_traders.csv
+    - forecasting: sentiment_forecast_plot.png
+    - dashboard: streamlit_app.py
+    - report: trader_sentiment_report.pdf
+    - diagram: workflow.png
