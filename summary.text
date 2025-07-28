@@ -1,0 +1,16 @@
+Data Loading & Cleaning: Loaded historical trader data and a market sentiment index, then cleaned the data by removing invalid trades and standardizing timestamps.
+NLP Sentiment Analysis: Applied the VADER sentiment analyzer to the 'classification' column to create a more nuanced, continuous vader_sentiment_score.
+Feature Engineering:
+Calculated daily volatility for each asset to measure price fluctuations.
+Created 7-day rolling averages for PnL, volume, and sentiment to capture recent trends.
+Generated 1-day lag features for PnL, volume, and sentiment to model temporal dependencies.
+PnL Prediction Model:
+Trained a RandomForestRegressor to predict daily Profit and Loss.
+The most important features were rolling_7d_pnl, daily_volatility, and trade_count.
+Sentiment Prediction Model:
+Trained a RandomForestClassifier to predict the next day's market sentiment.
+The most influential features were rolling_7d_volume, lag_1d_volume, and the vader_sentiment_score.
+Hyperparameter Tuning:
+Used GridSearchCV to find the optimal hyperparameters for both models.
+This improved the PnL model's R-squared to 0.33 and the sentiment model's accuracy to 56.1%.
+Actionable Insights: The analysis revealed that recent performance and volatility are key to predicting PnL, while trading volume is a strong leading indicator of sentiment changes.
